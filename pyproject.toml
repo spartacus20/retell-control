@@ -8,6 +8,8 @@ authors = ["Your Name <you@example.com>"]
 python = ">=3.11.0,<3.12"
 flask = "^3.0.0"
 gunicorn = "^21.2.0"
+retell-sdk = "^4.27.0"
+twilio = "^9.5.2"
 
 [tool.pyright]
 # https://github.com/microsoft/pyright/blob/main/docs/configuration.md
