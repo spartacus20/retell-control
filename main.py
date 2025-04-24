@@ -24,13 +24,19 @@ async def new_call():
         f"new-call: Call SID: {call_sid}, From: {from_number}, To: {to_number}"
     )
 
-    if(from_number is )
     try:
-        retell_call_response = retellclient.call.register_phone_call(
-            agent_id=RETELL_AGENT_ID,
-            from_number=from_number,
-            to_number=to_number,
-            direction="inbound")
+        if from_number == PHONE_NUMBER:
+            retell_call_response = retellclient.call.register_phone_call(
+                agent_id=RETELL_AGENT_ID,
+                from_number=from_number,
+                to_number=to_number,
+                direction="outbound")
+        else:
+            retell_call_response = retellclient.call.register_phone_call(
+                agent_id=RETELL_AGENT_ID,
+                from_number=from_number,
+                to_number=to_number,
+                direction="inbound")
         retell_call_id = retell_call_response.call_id
         call_data_store[from_number] = {
             'call_sid': call_sid,
